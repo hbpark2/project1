@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%:
+        }
+
+        body {
+            background-color: #fcfae8;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .wrapper {
+            width: 1200px;
+            height: 1800px;
+            margin: 0 auto;
+        }
+
+        header {
+            width: 1200px;
+            height: 100px;
+        }
+
+        @keyframes headerAni {
+            0% {
+                background-position: 0px -200px;
+            }
+
+            100% {
+                background-position: 0px -300px;
+            }
+        }
+
+        .header_back {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            width: 1200px;
+            height: 300px;
+            background-image: url(../Flowermood/about_us_8.png);
+            background-repeat: no-repeat;
+            background-size: 1200px;
+            animation-name: headerAni;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            opacity: 0.7;
+        }
+
+        .top {
+            position: fixed;
+            height: 100px;
+            z-index: 10;
+            transition: 1s;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .top:hover {
+            background-color: rgba(252, 250, 232, 0.9);
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            margin-left: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        li>a {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 14px;
+        }
+
+        .login_inner {
+            width: 100%;
+            height: 35px;
+            /*            background-color: #fafafa;*/
+        }
+
+        .login_ul {
+            float: right;
+            width: 1200px;
+            height: 35px;
+        }
+
+        .login_inner>ul>li {
+            float: right;
+            margin-right: 10px;
+            line-height: 30px;
+        }
+
+        .login_inner>ul>li:nth-child(1) {
+            float: right;
+            margin-right: 140px;
+            line-height: 30px;
+        }
+
+        .login_inner>ul>li>a {
+            color: #6b6b6b;
+            text-decoration: none;
+            font-size: 12px;
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        /*------------------------------------------------------------
+        -------------login, defalut setting-----------------------------*/
+        .logo {
+            width: 150px;
+            height: 50px;
+        }
+
+        .nav_inner {
+            width: 1200px;
+            height: 100px;
+        }
+
+        .nav_inner>ul {
+            width: 1000px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .nav_inner>ul>li:nth-child(1) {
+            line-height: 50px;
+            margin-left: 0px;
+        }
+
+        .nav_inner>ul>li {
+            height: 80px;
+            line-height: 50px;
+            margin-left: 70px;
+        }
+
+        .nav_inner>ul>li>.underline {
+            position: relative;
+            top: -15px;
+            left: -2px;
+            width: 0px;
+            height: 1px;
+            background-color: #fff;
+            transition: 0.5s;
+        }
+
+        .nav_inner>ul>li:hover .underline {
+            width: 100%;
+            height: 1px;
+            background-color: #6b6b6b;
+        }
+
+        .nav_inner>ul>li:nth-of-type(1):hover .hide_1 {
+            opacity: 1;
+            display: block;
+        }
+
+        .hide_1:hover {
+            opacity: 1;
+            display: block;
+        }
+
+        .hide_1 {
+            width: 1000px;
+            height: 300px;
+            background-color: rgba(252, 250, 232, 0.9);
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            transition: 1s;
+            opacity: 0;
+            display: none;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .hide_1>div>img {
+            display: block;
+            float: left;
+            width: 250px;
+            height: 300px;
+            opacity: 0.7;
+        }
+
+        .hide_1>p {
+            width: 500px;
+            height: 50px;
+            margin: 15px;
+            margin-left: 300px;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            transition: 0.5s;
+            border-radius: 25px;
+        }
+
+        .hide_1>p:hover {
+            width: 500px;
+            height: 50px;
+            margin: 15px;
+            margin-left: 300px;
+            color: #000;
+            font-size: 21px;
+            font-weight: 600;
+            background-color: rgba(232, 230, 202, 0.9);
+            border-radius: 25px;
+        }
+
+        .nav_inner>ul>li:nth-of-type(2):hover .hide_2 {
+            opacity: 1;
+            display: block;
+        }
+
+        .hide_2 {
+            width: 1000px;
+            height: 300px;
+            background-color: rgba(252, 250, 232, 0.9);
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            transition: 1s;
+            opacity: 0;
+            display: none;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .hide_2>div>img {
+            display: block;
+            float: left;
+            width: 250px;
+            height: 300px;
+            opacity: 0.7;
+        }
+
+        .hide_2>p {
+            width: 500px;
+            height: 50px;
+            margin: 15px;
+            margin-left: 300px;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            transition: 0.5s;
+        }
+
+        .hide_2>p:hover {
+            width: 500px;
+            height: 50px;
+            margin: 15px;
+            margin-left: 300px;
+            color: #000;
+            font-size: 21px;
+            font-weight: 600;
+            background-color: rgba(232, 230, 202, 0.9);
+            border-radius: 25px;
+        }
+
+        .hide_2:hover {
+            opacity: 1;
+            display: block;
+        }
+
+        /*/--------------------------------------------------------*/
+        section {
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
+        }
+
+        h3 {
+            position: absolute;
+            z-index: 2;
+            width: 1200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: #aa9;
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        /*--------------------------------------------------------*/
+        section>.shp_top {
+            position: relative;
+            top: 350px;
+            width: 1200px;
+            height: 85px;
+            padding-bottom: 15px;
+            /*            background-color: seagreen;*/
+        }
+
+        .shp_top>div {
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .shp_top>div:nth-of-type(1) {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .shp_top>div:nth-of-type(3) {
+            margin-left: 10px;
+        }
+
+        .shp_top>.selbox {
+            width: 150px;
+            height: 50px;
+            border: 1px solid #887;
+            box-sizing: border-box;
+            transition: 0.5s
+        }
+        .shp_top>.selbox:hover {
+            background-color: #887;
+            color: #ffe;
+            transition: 0.5s;
+            border:none;
+        }
+
+        /*---------------------SHOPPING BOX------------------------------------*/
+        .shp_box {
+            position: relative;
+            top: 350px;
+            width: 1200px;
+            height: 300px;
+        }
+
+        .shp_box>div {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .shp_box>.shp_h {
+            width: 1200px;
+            height: 100px;
+            border-top: 2px solid #ffe;
+            border-bottom: 1px solid #ddc;
+            box-sizing: border-box;
+            line-height: 100px;
+            background-color: #ddc;
+        }
+
+        .shp_h>div {
+            float: left;
+            width: 200px;
+            height: 100px;
+            border-right: 1px dashed #ffe;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        .shp_h>div:nth-of-type(1) {
+            float: left;
+            width: 50px;
+            height: 100px;
+        }
+
+        .shp_h>div:nth-of-type(2) {
+            float: left;
+            width: 450px;
+            height: 100px;
+        }
+
+        .shp_h>div:nth-of-type(3) {
+            float: left;
+            width: 175px;
+            height: 100px;
+        }
+
+        .shp_h>div:nth-of-type(4) {
+            float: left;
+            width: 175px;
+            height: 100px;
+        }
+
+        .shp_h>div:nth-of-type(5) {
+            float: left;
+            width: 175px;
+            height: 100px;
+        }
+
+        .shp_h>div:nth-of-type(6) {
+            float: left;
+            width: 175px;
+            height: 100px;
+            border-right: none;
+        }
+
+        /*SHP_H ---------------------------------------*/
+        /*SHP_B ---------------------------------------*/
+        .shp_box>.shp_b {
+            width: 1200px;
+            height: 200px;
+            border-bottom: 2px solid #ffe;
+            box-sizing: border-box;
+        }
+
+        .shp_b>div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border-right: 1px dashed #ffe;
+            box-sizing: border-box;
+        }
+
+        .shp_b>div:nth-of-type(1) {
+            float: left;
+            width: 50px;
+            height: 200px;
+        }
+
+        .shp_b>div:nth-of-type(2) {
+            float: left;
+            width: 450px;
+            height: 200px;
+        }
+
+        .shp_b>div:nth-of-type(2)>img {
+            display: block;
+            float: left;
+            margin-top: 25px;
+            margin-left: 50px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .shp_b>div:nth-of-type(2)>p:nth-of-type(1) {
+            width: 450px;
+            height: 30px;
+            margin-top: 60px;
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        .shp_b>div:nth-of-type(2)>p:nth-of-type(2) {
+            width: 450px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        .shp_b>div:nth-of-type(2)>p:nth-of-type(2)>span {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .shp_b>div:nth-of-type(3) {
+            float: left;
+            width: 175px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        .shp_b>div:nth-of-type(4) {
+            float: left;
+            width: 175px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        .shp_b>div:nth-of-type(5) {
+            float: left;
+            width: 175px;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        .shp_b>div:nth-of-type(6) {
+            float: left;
+            width: 175px;
+            height: 200px;
+            border-right: none;
+            color: #aa9;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+
+        /*--------------------------*/
+        .order_sec {
+            position: relative;
+            top: 380px;
+            width: 1200px;
+            height: 300px;
+        }
+
+        .order_sec>div {
+            position: relative;
+            width: 1200px;
+            height: 300px;
+/*            background-color: rgba(207, 207, 190, 0.5);*/
+        }
+
+        .order_sec>div>dl {
+            width: 250px;
+            height: 150px;
+            margin-top: 75px;
+            text-align: center;
+            float: left;
+            font-size: 24px;
+            color: #ffe;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: 0.5s;
+        }
+        .order_sec>div>dl:hover{
+            margin-top: 50px;
+            transition: 0.5s;
+        }
+        .order_sec>div>dl:nth-of-type(1) {
+            background-color: #fa753c;
+            margin-left: 25px;
+        }
+        .order_sec>div>dl:nth-of-type(2) {
+            background-color: #fdbdb0;
+        }
+        .order_sec>div>dl:nth-of-type(3) {
+            background-color: #fdc86d;
+        }
+        .order_sec>div>dl:nth-of-type(4) {
+            background-color: #93b0c3;
+        }
+
+        .order_sec>div>dl>dt {
+            width: 250px;
+            height: 75px;
+            line-height: 75px;
+        }
+
+        .order_sec>div>dl>dd>span {
+            width: 250px;
+            height: 75px;
+            line-height: 75px;
+            font-size: 32px;
+            font-weight: 700;
+
+        }
+
+        .order_sec>div>span {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 150px;
+            line-height: 150px;
+            margin-top: 75px;
+            text-align: center;
+            font-size: 34px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /*-------------------------*/
+
+        .pay_box {
+            position: relative;
+            top: 400px;
+            width: 1200px;
+            height: 200px;
+        }
+
+        .pay_box > div {
+            position: relative;
+            left: 775px;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: 600;
+            font-size: 16px;
+            float: left;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: 0.5s;
+        }
+        .pay_box > div:nth-of-type(1) {
+            margin-right: 25px;
+            border: 2px solid #fdbdb0;
+        }
+        .pay_box > div:nth-of-type(1) > a{
+            color: #fdbdb0;
+        }
+        .pay_box > div:nth-of-type(1):hover {
+            background-color: #fdbdb0;
+        }
+        
+        .pay_box > div:nth-of-type(2) {
+            border: 2px solid #93b0c3;
+        }
+        .pay_box > div:nth-of-type(2):hover {
+            background-color: #93b0c3;
+        }
+        .pay_box > div:nth-of-type(2) > a{
+            color: #93b0c3;
+        }
+        .pay_box > div:hover > a {
+            color: #ffe;
+        }
+/*--------------------------------------------------*/
+        footer {
+            position: relative;
+            top: 1300px;
+            width: 1200px;
+            height: 400px;
+        }
+        .footer_logo_wrap{
+            width:1200px;
+            height: 100px;
+            padding: 20px;
+        }
+        .footer_logo_wrap > img{
+            display: block;
+            width: 250px;
+            height:100px;
+        }
+        .st_big{
+            width: 250px;
+            height:30px;
+            line-height: 30px;
+            color: #333;
+            font-size: 20px;
+        }
+        .st_small{
+            width: 250px;
+            height:30px;
+            line-height: 30px;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .stbox{
+            float: left;
+        }
+        .st_box_1{
+            position: relative;
+            z-index: 1;
+        }
+        .st_box_2{
+            position: relative;
+            z-index: 1;
+            width: 350px;
+            height: 250px;
+            margin-left: 20px;
+        }
+        .st_box_2 > p{
+            line-height: 30px;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        @keyframes glassAni{
+            0%{
+                -webkit-transform: rotate(0deg);
+            }
+            100%{
+                -webkit-transform: rotate(10deg);
+            }
+        }
+        .st_box_3{
+            overflow: hidden;
+            position: absolute;
+/*            left:1050px;*/
+            width: 1200px;
+            height:400px;
+            opacity: 0.5;
+        }
+        .st_box_3 > img:nth-of-type(1){
+            position: absolute;
+            top: -30px;
+            display: block;
+            float: left;
+            width: 400px;
+            height:250px;
+            transform-origin: 0% 0%;
+            animation-name: glassAni;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        .st_box_3 > img:nth-of-type(2){
+            position: absolute;
+            top: -30px;
+            left: 200px;
+            width: 400px;
+            height:250px;
+            transform-origin: 0% 0%;
+            animation-name: glassAni;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        .st_box_3 > img:nth-of-type(3){
+            position: relative;
+            top: -80px;
+            left: 400px;
+            width: 400px;
+            height:250px;
+            transform-origin: 0% 0%;
+            animation-name: glassAni;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        .st_box_3 > img:nth-of-type(4){
+            position: relative;
+            top: 150px;
+            left: 450px;
+            width: 300px;
+            height:300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top">
+                <div class="login_inner">
+                    <ul class="login_ul">
+                        <li><a href="">search</a></li>
+                        <li><a href="">login</a></li>
+                        <li><a href="flowermood_etc/join.html">sign up</a></li>
+                    </ul>
+                </div>
+
+                <nav>
+                    <div class="nav_inner">
+                        <ul>
+                            <li>
+                                <a href="abPtype.html">ABOUT US</a>
+                                <div class="underline"></div>
+                                <div class="hide_1">
+                                    <div class="hide_img"><img src="../Flowermood/about_us_6.jpg" alt=""></div>
+                                    <p><a href="">&#8226; ABOUT US</a></p>
+                                    <p><a href="">&#8226; LOCATION</a></p>
+                                </div>
+                            </li>
+                            <li><a href="online_store.html">ONLINE STORE</a>
+                                <div class="underline"></div>
+                                <div class="hide_2">
+                                    <div class="hide_2_img"><img src="../Flowermood/about_us_5.jpg" alt=""></div>
+
+                                    <p><a href="">&#8226; ALL</a></p>
+                                    <p><a href="">&#8226; 선인장/다육식물</a></p>
+                                    <p><a href="">&#8226; 행잉식물</a></p>
+                                    <p><a href="">&#8226; 공기정화식물</a></p>
+
+                                </div>
+                            </li>
+                            <li><a href="">COLLECTION</a>
+                                <div class="underline"></div>
+                            </li>
+                            <li>
+                                <div class="logo_wrap">
+                                    <a href="../ptype.html">
+                                        <img class="logo" src="../Flowermood/flowerMood_size.png" alt="">
+                                    </a>
+                                </div>
+                            </li>
+                            <li><a href="board_FAQ.html">BOARD</a>
+                                <div class="underline"></div>
+                            </li>
+                            <li><a href="mypage.html">MYPAGE</a>
+                                <div class="underline"></div>
+                            </li>
+                            <li><a href="cart.html">CART</a>
+                                <div class="underline"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+
+
+        </header>
+        <div class="header_back"></div>
+        <section>
+            <h3>
+                SHOPPING CART
+            </h3>
+            <article class="shp_top">
+                <div></div>
+                <div class="selbox">선택상품 해제</div>
+                <div class="selbox">선택상품 찜</div>
+            </article>
+            <article class="shp_box">
+                <div class="shp_h">
+                    <div></div>
+                    <div>상품/옵션정보</div>
+                    <div>수량</div>
+                    <div>할인/적립</div>
+                    <div>결제 예정 금액</div>
+                    <div>배송비</div>
+                </div>
+                <div class="shp_b">
+                    <div></div>
+                    <div>
+                        <img src="../Flowermood/chunhwagag/chung_hue.png" alt="">
+                        <p>청화각</p>
+                        <p><span>54,000</span>원</p>
+                    </div>
+                    <div>1개</div>
+                    <div></div>
+                    <div>5,4000원</div>
+                    <div>10000원 이상 배송비 0원 (택배-선결제)</div>
+                </div>
+            </article>
+            <article class="order_sec">
+
+                <div>
+                    <dl>
+                        <dt>총 상품금액</dt>
+                        <dd><span>0&nbsp;</span>WON</dd>
+                    </dl>
+                    <span>&#45;</span>
+                    <dl>
+                        <dt>총 할인금액</dt>
+                        <dd><span>0&nbsp;</span>WON</dd>
+                    </dl>
+                    <span>&#43;</span>
+                    <dl>
+                        <dt>배송비</dt>
+                        <dd><span>0&nbsp;</span>WON</dd>
+                    </dl>
+                    <span>&#61;</span>
+                    <dl>
+                        <dt>총 결제금액</dt>
+                        <dd><span>0&nbsp;</span>WON</dd>
+                    </dl>
+
+                </div>
+
+            </article>
+            <article class="pay_box">
+
+                <div>
+                    <a href="">선택상품 주문</a>
+                </div>
+
+                <div>
+                    <a href="">전체상품 주문</a>
+                </div>
+
+            </article>
+
+        </section>
+
+        <footer>
+            <div class="stbox footer_logo_wrap">
+<!--                <a href="">-->
+                    <img class="logo" src="../Flowermood/flowerMood_size.png" alt="">
+<!--                </a>-->
+            </div>
+            
+            <div class="stbox st_box_1">
+                <p class="st_big">010-2223-0833</p>
+                <p class="st_small">OPENING HOURS. AM10:00~PM20:00</p>
+                <p class="st_small">LUNCH BREAK. PX13:00~PM14:00</p> 
+                <p class="st_small">MON OFF</p>      
+            </div>
+
+           <div class="stbox st_box_2">
+                <p>COMPANY <b>Flowermood</b></p>
+                <p>OWNER&amp;ADMIN <b>Jake</b></p> 
+                <p>BUSINESS NO. <b>212-6541-004562</b></p>
+                <p>ONLINE-ORDER NO. <b>제 2018-용인기흥-0004호</b></p>
+                <p>ADRESS <b>경기도 용인시 기흥구 구갈동 366-6</b></p>  
+                <p>TEL <b>010-2223-0833</b></p>      
+                <p>EMAIL <b>hbpark2@gmail.com</b></p>  
+                <p><a href="../mobile/index.html"><b>mobile.ver</b></a></p>  
+           </div>
+           
+           <div class="stbox st_box_3">
+               <img src="../Flowermood/banner_knew.png" alt="">
+
+           </div>
+           
+           <div class="stbox st_box_4">
+               
+           </div>
+           
+           <div class="stbox st_box_5">
+               
+           </div>
+       
+       
+        </footer>
+
+    </div>
+</body>
+
+</html>

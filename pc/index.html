@@ -1,0 +1,161 @@
+<?
+	session_start();
+    @extract($_GET); 
+    @extract($_POST); 
+    @extract($_SESSION);  
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flowermoods</title>
+    <link rel="shortcut icon" type="image/x-icon"  href="favicon.ico" >
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="maincss.css">
+                        <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+                        <!-- 폰트 -->
+    <script src="js/mainpopup.js" ></script> 
+</head>
+
+<body>
+    <div id="skipNav">
+        <a href="#content">본문 바로가기</a>
+        <a href="#gnb">글로벌네비게이션 바로가기</a>
+    </div>
+    <div class="wrapper">
+        <!-- 헤더 삽입 영역 -->
+
+            <? include "common/main_header.html" ?>  
+       
+        <!-- 헤더 삽입 영역 END -->
+        
+        <!-- 본문 컨텐츠 시작 -->
+        <article id="content">
+            <h2 class="hidden">본문 컨텐츠 영역</h2>
+            <!-- S1(기업소개) START -->
+            <div id="s1">
+                <h3 class="hidden">기업소개</h3>
+                <div id="v_cover">
+                    <video id="video" preload="auto" autoplay loop="loop" muted="muted">
+                        <source src="images/bg/s1.mp4">
+                    </video>
+                </div>
+
+                <p class="intro">
+                    <span class="intro_1">We foward on Gardening Culture</span><br>
+                    <span class="intro_2">We can give you space<br>
+                        where you can rest with coffee</span><br>
+
+                    <span class="go_aboutus">
+                        <a href="sub/about_us/about_us.html">
+                            Go About us <span>></span><span>></span>
+                        </a>
+                    </span>
+                    <p>
+            </div>
+            <!-- S1기업소개 END -->
+            <!-- S2(N&B) START -->
+            
+            <div id="s2"></div>
+            
+            
+            <!-- S2(N&B) END -->
+            <!-- S3(ONLINESTORE) START -->
+            
+            <div id="s3"></div>
+            
+            <!-- S3(ONLINESTORE) END -->
+            <!-- S4(NOTICE) START -->
+            <div id="s4">
+                <h3 class="hidden">공지사항</h3>
+                <ul class="s4_wrapper">
+                    <li class="news_box">
+                        <h4>EVENT</h4>
+                 
+                <? include "../lib/func.php"; ?>      
+                <? latest_article("board", 3, 30); ?>  
+                        
+                        <a class="plus" href="board/list.php">
+                        <span class="hidden">더보기 버튼</span>
+                        <span>&#43;</span>
+                        </a>
+                    </li>
+
+                    <li class="sns_box">
+                        <h4>INSTAGRAM</h4>
+                        <ul>
+                            <li class="imgbox"><img src="images/nb/prd_1.jpg" alt=""></li>
+                            <li class="imgbox"><img src="images/nb/prd_2.jpg" alt=""></li>
+                            <li class="imgbox"><img src="images/nb/prd_3.jpg" alt=""></li>
+                            <li class="imgbox"><img src="images/nb/prd_4.jpg" alt=""></li>
+                        </ul>
+                        <span class="hidden">더보기</span>
+                        <span class="plus">&#43;</span>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- S4(NOTICE) END -->
+            <!-- S5(INTRODUCE, ONLINESTORE) START -->
+            <div id="s5">
+                <h3 class="hidden">기업소개, 온라인스토어</h3>
+
+                <ul class="s5_wrapper">
+
+                    <li class="s5_object s5_left">
+                        <span><a href="#">About us</a></span>
+                    </li>
+
+                    <li class="s5_object s5_right">
+                        <span><a href="#">Online Store</a></span>
+                    </li>
+
+                </ul>
+
+            </div>
+        </article>
+        <!-- 본문 컨텐츠 끝 -->
+        <!-- 푸터 삽입 영역 START-->
+                   
+                    <? include "common/footer.html" ?>  
+
+        <!-- 푸터 삽입 영역 END-->
+    </div>
+    
+    <!-- 팝업 공지 -->
+    <div id="showimage" style="z-index:99;position:absolute;width:322px;right:200px;top:300px;">
+  <script>
+    function closeWin(){
+       var chk = document.getElementById('Notice')
+       if ( chk.checked ) {
+             setCookie( "Notice", "done" , 1); //1이란 숫자는 1일간 안보임을 뜻합니다. 날짜는 자신에 맞게 수정하세요
+        }
+    }
+   if ( getCookie( "Notice" ) == "done" ) {
+       hidebox();
+   }
+ </script>
+    <div>
+          <img src="images/pop.png" alt="본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어졌습니다. 홈페이지의 일부 내용과 기타 이미지 등은 그 출처가 따로 있음을 밝힙니다." >
+    </div>
+     <div style="font-size:12px;text-align:center;color:#666;">
+       <input type="checkbox" name="Notice" id="Notice" value="" title="오늘은 이창을 열지 않음 선택상자"><label for="Notice">오늘은 이창을 열지 않음.</label>
+     <a href="#"  onclick="closeWin();hidebox();return false;"> [close] </a>
+  </div>
+</div>
+    
+    
+   
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery-migrate-1.4.1.min.js"></script>
+<script src="nav_js.js"></script>
+
+<script src="js/s2_data-json.js"></script>
+<script src="js/s3_data-json.js"></script>
+</body>
+
+</html>

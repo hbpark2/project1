@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <title> profile </title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/typer.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://kit.fontawesome.com/e39232b629.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <h1 class="hidden">jake's profile</h1>
+    <!-- 주 메뉴 -->
+    <ul id="menu">
+        <li class="on"><a href="#">Intro</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skill</a></li>
+        <li><a href="#">기업형</a></li>
+        <li><a href="#">모바일</a></li>
+        <li><a href="#">반응형</a></li>
+        <li><a href="#">워드프레스</a></li>
+    </ul>
+
+    <!-- sns -->
+    <ul id="sns">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+    </ul>
+
+    <!-- 전체 페이지 -->
+    <div id="wrap">
+
+        <!-- 첫 번째 박스 -->
+        <section class="intro_wrap">
+            <h2 class="hidden"> INTRO SECTION</h2>
+            <div class="inner">
+                <p>
+                    Web Publisher,
+                    <span class="font_box"> Hyeongbin Park </span>
+                </p>
+
+                <p class="main-text"></p>
+                <p class="right_font">
+                    Hyeongbin Park's
+                    Portfolio
+                </p>
+
+
+            </div>
+        </section>
+
+        <!-- 두 번째 박스 -->
+        <section class="about_wrap">
+            <h2 class="hidden"> ABOUT SECTION</h2>
+            <div class="inner">
+                <ul class="profile">
+                    <li><img src="img/profile_6.jpg" alt=""></li>
+                    <li><span class="special_bold">JAKE</span> &#64;박형빈</li>
+                    <li>birth. 1995.06.24 </li>
+                    <li>call. 010-2223-0833</li>
+                    <li>e-mail. hbpark2@naver.com</li>
+                </ul>
+
+                <p class="intro_txt">
+                    반갑습니다! 저는 <br>
+                    독서를 사랑하고, <br>
+                    코딩의 끝없는 매력에 <br>
+                    흠 - 뻑 빠져버린 <br>
+                    <span class="font_box">웹퍼블리셔</span> 에요.
+
+                </p>
+            </div>
+        </section>
+
+        <!-- 세 번째 박스 -->
+        <section class="skill_wrap">
+            <h2 class="hidden"> SKILL SECTION</h2>
+            <div class="inner">
+                <p>
+                    제가 사랑하는, <br>
+                    그래서 자신있는 <br>
+                    일을 소개합니다.
+                </p>
+
+
+                <dl>
+                    <dt><i class="fab fa-html5"></i>HTML5</dt>
+                    <dd>
+                        웹 접근성과 웹표준을 준수하는 <span class="font_box">MARKUP</span> <br>
+                        시맨틱 태그를 활용한 시맨틱한 아웃라인 구조
+                    </dd>
+                    <dt><i class="fab fa-css3-alt"></i>CSS3</dt>
+                    <dd>
+                        미디어쿼리를 이용한 반응형 사이트 제작을 재밌어 해요.<br>
+                        모바일 전용 사이트 제작 (디바이스별 호환)
+                    </dd>
+                    <dt><i class="fab fa-js-square"></i>javascript + jQuery</dt>
+                    <dd>
+                        Form 값 유효성 체크 <br>
+                        탭, 슬라이드 등의 기능 구현 및 플러그인 사용
+                    </dd>
+                    <dt><i class="fab fa-php"></i>php+mySql</dt>
+                    <dd>Form 값 유효성 체크 <br>
+                        탭, 슬라이드 등의 기능 구현 및 플러그인 사용</dd>
+                    <dt><i class="fab fa-wordpress"></i>Wordpress</dt>
+                    <dd>Form 값 유효성 체크 <br>
+                        탭, 슬라이드 등의 기능 구현 및 플러그인 사용</dd>
+                    <dt><i class="fab fa-adobe"></i>Photoshop+Illust</dt>
+                    <dd>
+                        이미지 누끼따기, 레이아웃 자르기 <br>
+                        간단한 이미지 보정/수정/합성
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- 네 번째 박스 -->
+        <section class="project">
+            <h2 class="hidden"> PROJECT_1 SECTION</h2>
+            <div class="inner">
+                <div class="desktop">
+                    <img class="pcpng" src="img/desktop.png" alt="">
+                    <img class="descgif" src="img/enterprise.gif" alt="">
+                </div>
+                <div class="desc">
+                    <p><strong>FLOWERMOOD DESKTOP</strong> <br> 웹사이트 제작</p>
+                    <p>
+                        기획의도 : 기존 웹사이트의 산만한 Interface <br>
+                        Image Alt누락으로인한 접근성 부재를 문제점으로 삼아<br>
+                        트렌드에 맞는 UI와 웹 표준을 지향하는<br>
+                        마크업으로 접근성을 고려하여 새롭게 구축하였습니다<br>
+                    </p>
+
+                    <dl>
+                        <dt>제작기간</dt>
+                        <dd>2019.12.14 ~ 2020.01.04 &#40;3 WEEK&#41;</dd>
+                        <dt>제작기술</dt>
+                        <dd>
+                            Adobe Photoshop, Illustrator
+                            HTML5/CSS3, Javascript, jQuery, Ajax(Json), php(in clude), 그누보드(게시판)
+                            W3C 웹표준 마크업 검사, 웹접근성검사(K-WAH), 크로스브라우징 완료
+                        </dd>
+                    </dl>
+                    
+                </div>
+                
+            </div>
+            <a href="#">VIEW SITE</a>
+        </section>
+        <!-- 다섯 번째 박스 -->
+        <section class="project project_2">
+            <h2 class="hidden"> PROJECT_2 SECTION</h2>
+            <div class="inner">
+               <div class="desktop">
+                    <img class="mobile_png" src="img/mobile.png" alt="">
+                    <img class="mobile_gif" src="img/mobile.gif" alt="">
+                </div>
+                <div class="desc">
+                    <p><strong>FLOWERMOOD MOBILE</strong> <br> 웹사이트 제작</p>
+                    <p>
+                        기획의도 : 기존 웹사이트의 산만한 Interface <br>
+                        Image Alt누락으로인한 접근성 부재를 문제점으로 삼아<br>
+                        트렌드에 맞는 UI와 웹 표준을 지향하는<br>
+                        마크업으로 접근성을 고려하여 새롭게 구축하였습니다<br>
+                    </p>
+
+                    <dl>
+                        <dt>제작기간</dt>
+                        <dd>2019.12.14 ~ 2020.01.04 &#40;3 WEEK&#41;</dd>
+                        <dt>제작기술</dt>
+                        <dd>
+                            Adobe Photoshop, Illustrator
+                            HTML5/CSS3, Javascript, jQuery, Ajax(Json), php(in clude), 그누보드(게시판)
+                            W3C 웹표준 마크업 검사, 웹접근성검사(K-WAH), 크로스브라우징 완료
+                        </dd>
+                    </dl>
+                    
+                </div>
+                 
+            </div>
+            <a href="#">VIEW SITE</a>
+        </section>
+        <!-- 여섯 번째 박스 -->
+        <section class="project project_3">
+            <h2 class="hidden"> PROJECT_3 SECTION</h2>
+            <div class="inner">
+                <div class="desktop">
+                    <img class="pcpng" src="img/desktop.png" alt="">
+                    <img class="descgif" src="img/responsive.gif" alt="">
+                </div>
+                <div class="desc">
+                    <p><strong>LOVING VINCENT RESPONSIVE</strong> <br> 웹사이트 제작</p>
+                    <p>
+                        기획의도 : 기존 웹사이트의 산만한 Interface <br>
+                        Image Alt누락으로인한 접근성 부재를 문제점으로 삼아<br>
+                        트렌드에 맞는 UI와 웹 표준을 지향하는<br>
+                        마크업으로 접근성을 고려하여 새롭게 구축하였습니다<br>
+                    </p>
+
+                    <dl>
+                        <dt>제작기간</dt>
+                        <dd>2019.12.14 ~ 2020.01.04 &#40;3 WEEK&#41;</dd>
+                        <dt>제작기술</dt>
+                        <dd>
+                            Adobe Photoshop, Illustrator
+                            HTML5/CSS3, Javascript, jQuery, Ajax(Json), php(in clude), 그누보드(게시판)
+                            W3C 웹표준 마크업 검사, 웹접근성검사(K-WAH), 크로스브라우징 완료
+                        </dd>
+                    </dl>
+                    
+                </div>
+                
+            </div>
+            <a href="#">VIEW SITE</a>
+        </section>
+        <section class="project">
+            <h2 class="hidden"> PROJECT_4 SECTION</h2>
+            <div class="inner">
+                <div class="desktop">
+                    <img class="pcpng" src="img/desktop.png" alt="">
+                    <img class="descgif" src="img/wordpress.gif" alt="">
+                </div>
+                <div class="desc">
+                    <p><strong>TRENDIR WORDPRESS</strong> <br> 웹사이트 제작</p>
+                    <p>
+                        기획의도 : 기존 웹사이트의 산만한 Interface <br>
+                        Image Alt누락으로인한 접근성 부재를 문제점으로 삼아<br>
+                        트렌드에 맞는 UI와 웹 표준을 지향하는<br>
+                        마크업으로 접근성을 고려하여 새롭게 구축하였습니다<br>
+                    </p>
+
+                    <dl>
+                        <dt>제작기간</dt>
+                        <dd>2019.12.14 ~ 2020.01.04 &#40;3 WEEK&#41;</dd>
+                        <dt>제작기술</dt>
+                        <dd>
+                            Adobe Photoshop, Illustrator
+                            HTML5/CSS3, Javascript, jQuery, Ajax(Json), php(in clude), 그누보드(게시판)
+                            W3C 웹표준 마크업 검사, 웹접근성검사(K-WAH), 크로스브라우징 완료
+                        </dd>
+                    </dl>
+                    
+                </div>
+                
+            </div>
+            <a href="#">VIEW SITE</a>
+        </section>
+        
+    </div>
+</body>
+
+</html>
